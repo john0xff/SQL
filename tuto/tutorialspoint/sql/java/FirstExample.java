@@ -1,4 +1,4 @@
-package com.phoenixjcam.jdbc;
+package tutorialspoint.sql.java;
 
 //STEP 1. Import required packages
 import java.sql.*;

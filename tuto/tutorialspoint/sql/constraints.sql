@@ -85,13 +85,94 @@ ALTER TABLE CUSTOMERS DROP PRIMARY KEY ;
 /* -----------------  FOREIGN Key  ------------------- */
 /* Uniquely identified a rows/records in any another database table. */
 
-/**/
+/* CUSTOMERS table: */
+CREATE TABLE CUSTOMERS(
+       ID   INT              NOT NULL,
+       NAME VARCHAR (20)     NOT NULL,
+       AGE  INT              NOT NULL,
+       ADDRESS  CHAR (25) ,
+       SALARY   DECIMAL (18, 2),       
+       PRIMARY KEY (ID)
+);
 
-/**/
+/* ORDERS table: */
+CREATE TABLE ORDERS (
+       ID          INT        NOT NULL,
+       DATE        DATETIME, 
+       CUSTOMER_ID INT references CUSTOMERS(ID),
+       AMOUNT     double,
+       PRIMARY KEY (ID)
+);
 
-/**/
+/* If ORDERS table has already been created, and the foreign key has not yet been set */
+ALTER TABLE ORDERS ADD FOREIGN KEY (Customer_ID) REFERENCES CUSTOMERS (ID);
 
-/**/
+/* To drop a FOREIGN KEY constraint, use the following SQL */
+ALTER TABLE ORDERS DROP FOREIGN KEY;
+
+/* -----------------  CHECK Constraint  ------------------- */
+/* The CHECK constraint ensures that all values in a column satisfy certain conditions.  */
+CREATE TABLE CUSTOMERS(
+       ID   INT              NOT NULL,
+       NAME VARCHAR (20)     NOT NULL,
+       AGE  INT              NOT NULL CHECK (AGE >= 18),
+       ADDRESS  CHAR (25) ,
+       SALARY   DECIMAL (18, 2),       
+       PRIMARY KEY (ID)
+);
+
+/* If CUSTOMERS table has already been created, then to add a CHECK constraint to AGE column  */
+ALTER TABLE CUSTOMERS MODIFY AGE INT NOT NULL CHECK (AGE >= 18 );
+
+/* You can also use following syntax, which supports naming the constraint in multiple columns as well: */
+ALTER TABLE CUSTOMERS ADD CONSTRAINT myCheckConstraint CHECK(AGE >= 18);
+
+/* To drop a CHECK constraint, use the following SQL */
+ALTER TABLE CUSTOMERS DROP CONSTRAINT myCheckConstraint;
+
+/* -----------------  INDEX Constraint  ------------------- */
+/* Use to create and retrieve data from the database very quickly. */
+CREATE TABLE CUSTOMERS(
+       ID   INT              NOT NULL,
+       NAME VARCHAR (20)     NOT NULL,
+       AGE  INT              NOT NULL,
+       ADDRESS  CHAR (25) ,
+       SALARY   DECIMAL (18, 2),       
+       PRIMARY KEY (ID)
+);
+
+/* Now, you can create index on single or multiple columns using the following syntax:  */
+CREATE INDEX index_name ON table_name ( column1, column2.....);
+
+/* To create an INDEX on AGE column, to optimize the search on customers for a particular age, following is the SQL syntax: */
+CREATE INDEX idx_age ON CUSTOMERS ( AGE );
+
+/* To drop an INDEX constraint, use the following SQL: */
+ALTER TABLE CUSTOMERS DROP INDEX idx_age;
+   
+/*  */
+
+/*  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

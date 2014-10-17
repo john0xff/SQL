@@ -65,7 +65,7 @@ SELECT COUNT(*) FROM users WHERE username REGEXP ('t');
 SELECT * FROM users WHERE username REGEXP ('t') OR username REGEXP ('n');
 SELECT * FROM users WHERE username REGEXP ('t') OR username REGEXP ('n');
 SELECT COUNT(*) FROM users WHERE username REGEXP ('t') OR username REGEXP ('n');
-
+SELECT * FROM users WHERE username REGEXP ('t') OR (username REGEXP ('n') and username REGEXP ('i'));
 
 /*--------------BACKSLASH*/
 /*SELECT * FROM users WHERE username = '\'mas';*/

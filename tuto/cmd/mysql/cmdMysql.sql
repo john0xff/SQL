@@ -59,6 +59,8 @@ SELECT * FROM users WHERE 1 ORDER BY rand() limit 10;
 SELECT DISTINCT username, email FROM users WHERE 1;
 SELECT MAX(passwd) FROM users;
 SELECT * FROM users WHERE username LIKE ('king');
+SELECT * FROM users WHERE username LIKE ('%k%');
+
 SELECT * FROM users WHERE username RLIKE ('t');
 SELECT * FROM users WHERE username REGEXP ('t');
 SELECT COUNT(*) FROM users WHERE username REGEXP ('t');
@@ -66,6 +68,8 @@ SELECT * FROM users WHERE username REGEXP ('t') OR username REGEXP ('n');
 SELECT * FROM users WHERE username REGEXP ('t') OR username REGEXP ('n');
 SELECT COUNT(*) FROM users WHERE username REGEXP ('t') OR username REGEXP ('n');
 SELECT * FROM users WHERE username REGEXP ('t') OR (username REGEXP ('n') and username REGEXP ('i'));
+SELECT * FROM users ORDER BY RAND();
+
 
 /*--------------BACKSLASH*/
 /*SELECT * FROM users WHERE username = '\'mas';*/

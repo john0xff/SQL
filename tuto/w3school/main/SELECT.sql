@@ -1,1 +1,6 @@
-SELECT * FROM Orders WHERE OrderDate='1996-07-19';
+SELECT * FROM Orders 
+WHERE OrderDate='2014-10-14';
+/*----------------------------------------------------------------*/
+SELECT * FROM Products 
+ORDER BY Price DESC;
+/*----------------------------------------------------------------*/

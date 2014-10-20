@@ -6,8 +6,11 @@
  * FULL OUTER, 
  * LEFT with exclusion, 
  * RIGHT with exclusion
- * FULL OUTER with exclusion */
-
+ * FULL OUTER with exclusion
+ * 
+ * http://www.techonthenet.com/oracle/joins.php
+ * 
+ */
 /*----------------------------------------------------------------*/
 
 SELECT Customers.CustomerName, Orders.OrderID

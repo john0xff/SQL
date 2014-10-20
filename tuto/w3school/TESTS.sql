@@ -8,9 +8,4 @@
 
 
 
-SELECT LastName AS Alias
-FROM Employees;
-
-
-SELECT DISTINCT Employees.FirstName FROM Employees WHERE Employees.FirstName LIKE 'A%'
 

@@ -15,3 +15,9 @@ ADD CONSTRAINT `orders_ibfk_3`
 FOREIGN KEY (`ShipperID`) 
 REFERENCES `w3schools2`.`shippers`(`ShipperID`) 
 ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+ALTER TABLE `connector` 
+ADD CONSTRAINT `connector_ibfk_2` 
+FOREIGN KEY (`roleID`) 
+REFERENCES `zzuser`.`role`(`roleID`) 
+ON DELETE RESTRICT ON UPDATE RESTRICT;

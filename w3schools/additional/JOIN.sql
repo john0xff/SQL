@@ -59,14 +59,19 @@ FROM Orders
 RIGHT OUTER JOIN Employees 
 ON Orders.EmployeeID=Employees.EmployeeID
 
-/*----------------------------------------------------------------*/
+/*-----------DOUBLE JOIN-----------------------------------------*/
+SELECT Orders.OrderID, Employees.LastName, Customers.CustomerName
+FROM Orders
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
 
-
-
-
-
-/*----------------------------------------------------------------*/
-
+/*----------TRIPLE JOIN------------------------------------------*/
+SELECT Orders.OrderID, Employees.LastName, Customers.CustomerName, Shippers.ShipperName
+FROM Orders
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
+ORDER BY Shippers.ShipperName;
 /*----------------------------------------------------------------*/
 
 /*----------------------------------------------------------------*/

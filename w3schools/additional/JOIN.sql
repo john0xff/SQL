@@ -12,7 +12,7 @@
  * 
  */
 /*----------------------------------------------------------------*/
-
+/*  http://www.w3schools.com/sql/trysql.asp?filename=trysql_select_join_inner  */
 SELECT Customers.CustomerName, Orders.OrderID
 FROM Customers
 INNER JOIN Orders ON Customers.CustomerID = Orders.CustomerID
@@ -20,7 +20,7 @@ ORDER BY Customers.CustomerName
 LIMIT 0 , 30
 
 /*----------------------------------------------------------------*/
-
+/*  http://www.w3schools.com/sql/trysql.asp?filename=trysql_select_join_left  */
 SELECT Customers.CustomerName, Orders.OrderID
 FROM Customers
 LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
@@ -34,6 +34,12 @@ FROM Orders
 RIGHT JOIN Customers ON Customers.CustomerID = Orders.CustomerID
 ORDER BY Customers.CustomerName
 LIMIT 0 , 30
+/*----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------*/
+
 
 /*----------------------------------------------------------------*/
 /*-----------------------EXAMPLES OF USAGE------------------------*/
@@ -72,7 +78,12 @@ INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
 INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
 INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
 ORDER BY Shippers.ShipperName;
-/*----------------------------------------------------------------*/
+/*--------------TRIPLE JOIN-------------------------------------*/
+select employees.firstname, employees.lastname, shippers.shippername, customers.contactname
+from orders
+inner join employees on orders.EmployeeID = employees.EmployeeID
+inner join shippers on orders.ShipperID = shippers.ShipperID
+inner join customers on orders.CustomerID = customers.CustomerID
 
 /*----------------------------------------------------------------*/
 

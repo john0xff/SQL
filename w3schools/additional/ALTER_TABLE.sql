@@ -37,6 +37,6 @@ ALTER TABLE `user_role` RENAME COLUMN `userName` to `userID`;
 ALTER TABLE `user_role` CHANGE `userName` `userID` INT 
 
 
-
-
+ALTER TABLE `links` CHANGE `linkDesctiption` `linkDescription` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL DEFAULT NULL;
+ALTER TABLE `links` CHANGE `linkDesctiption` `linkDescription` VARCHAR(100);
 

@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="relationsExercise"/>
 	<classpathentry kind="src" path="w3schools"/>
 	<classpathentry kind="src" path="tuto"/>
+	<classpathentry kind="src" path="liveSearch"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
